@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="163dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="IMC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/imc" />
+
+    <LinearLayout
+        android:id="@+id/layContainer"
+        android:layout_width="409dp"
+        android:layout_height="617dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <LinearLayout
+            android:id="@+id/layDados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPeso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="25dp"
+                android:text="Peso"
+                android:textColor="@color/verde"
+                android:textColorHint="@color/verde"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etPeso"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="Informe seu peso ex: 70.5"
+                android:inputType="numberDecimal"
+                android:paddingLeft="25dp" />
+
+            <TextView
+                android:id="@+id/tvAltura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="25dp"
+                android:text="Altura"
+                android:textColor="@color/verde"
+                android:textColorHint="@color/verde"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etAltura"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="Informe sua altura ex: 1.70"
+                android:inputType="numberDecimal"
+                android:paddingLeft="25dp" />
+
+            <Button
+                android:id="@+id/btnCalcular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#0F7244"
+                android:onClick="calcular"
+                android:text="Calcular" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layResultado"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvIMC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="IMC:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvResultadoImc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="0.0"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvClassificacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="Classificação:"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvResultadoClassificacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text=" "
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnLimpar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:onClick="limpar"
+                android:text="Limpar informações" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
